@@ -1,0 +1,85 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1696530858
+icon.svg::CompressedTexture2D::1067822620190701506::1694742376::1694742385::1::::<><>::
+README.md::TextFile::-1::1695240835::0::1::::<><>::
+::res://Assets/::1696450988
+::res://Assets/icons/::1696356579
+delete [#1487].png::CompressedTexture2D::6836039843111100059::1470647916::1694804789::1::::<><>::
+exit_focus [#852].png::CompressedTexture2D::4350822616305047346::1470647916::1694804198::1::::<><>::
+exit_focus_round [#851].png::CompressedTexture2D::6375777360498344743::1470647916::1694804198::1::::<><>::
+exit_full_screen [#905].png::CompressedTexture2D::3134222170257874565::1470647916::1694804198::1::::<><>::
+mouse_pointer [#6].png::CompressedTexture2D::3580578493637999015::1470647918::1694804198::1::::<><>::
+network_3_round [#1084].png::CompressedTexture2D::149277419231477648::1470647916::1694804198::1::::<><>::
+pen [#1320].png::CompressedTexture2D::4555118141853479966::1470647916::1694804871::1::::<><>::
+profile [#1336].png::CompressedTexture2D::5206073082689914195::1470647916::1694804789::1::::<><>::
+profile_close [#1338].png::CompressedTexture2D::869455063790743641::1470647916::1694804789::1::::<><>::
+save_item [#1408].png::CompressedTexture2D::7669243159432237129::1470647916::1694804198::1::::<><>::
+save_item [#1409].png::CompressedTexture2D::5971571188405368437::1470647916::1694804198::1::::<><>::
+save_item [#1410].png::CompressedTexture2D::4546768306895401234::1470647916::1694804198::1::::<><>::
+save_item [#1411].png::CompressedTexture2D::4653925885308012995::1470647916::1694804198::1::::<><>::
+::res://Assets/Textures/::1696451080
+light.png::CompressedTexture2D::4030238039054109448::1696451079::1696451080::1::::<><>::
+::res://Assets/world_assets/::1696444968
+0fc84f0c3d4c39f.png::CompressedTexture2D::309503663160591310::1695579016::1695579018::1::::<><>::
+Dungeon Environment.png::CompressedTexture2D::5302360102686065951::1696444968::1696444968::1::::<><>::
+topdownrpg_indoor1.jpg::CompressedTexture2D::7984254499212728147::1695228105::1695228117::1::::<><>::
+::res://Classes/::1694742435
+::res://Componets/::1696356579
+::res://Componets/interactable_component/::1696444517
+interactable_component.tscn::PackedScene::2567705003015343815::1696444517::0::1::::<><>::res://Componets/interactable_component/interactable_componentSCRIPT.gd
+interactable_componentSCRIPT.gd::GDScript::-1::1695577435::0::1::::<>Node2D<>::
+::res://Componets/room_spawn_component/::1696452487
+spawn_room_component.tscn::PackedScene::8618266895750649984::1696452487::0::1::::<><>::res://Componets/room_spawn_component/spawn_room_componentSCRIPT.gd
+spawn_room_componentSCRIPT.gd::GDScript::-1::1695782131::0::1::::Spawn_Component<>Node2D<>::
+::res://Componets/show_damage_component/::1696356579
+label_mov.tscn::PackedScene::4977972702277891908::1695578731::0::1::::<><>::res://Componets/show_damage_component/label_movSCRIPT.gd
+label_movSCRIPT.gd::GDScript::-1::1695416171::0::1::::<>CharacterBody2D<>::
+show_damage_component.tscn::PackedScene::2675674399240337240::1695578731::0::1::::<><>::res://Componets/show_damage_component/show_damage_componentSCRIPT.gd
+show_damage_componentSCRIPT.gd::GDScript::-1::1695416258::0::1::::<>Node2D<>::
+::res://RouguePG/::1696530763
+README.md::TextFile::-1::1696530763::0::1::::<><>::
+::res://Scenes/::1696356580
+::res://Scenes/enemy_scenes/::1696356579
+::res://Scenes/enemy_scenes/dummy/::1696356579
+dummy.tscn::PackedScene::7459691458403777237::1695578731::0::1::::<><>::res://Scenes/enemy_scenes/dummy/dummySCRIPT.gd<>uid://beed74g0kjyk3
+dummySCRIPT.gd::GDScript::-1::1695416512::0::1::::<>RigidBody2D<>::
+::res://Scenes/interactable_objects/::1696356579
+::res://Scenes/interactable_objects/door/::1696452487
+door_object.tscn::PackedScene::7041209540649506631::1696452487::0::1::::<><>::res://Scenes/interactable_objects/door/door_objectSCRIPT.gd<>uid://bct2yxswndyb4::::res://Componets/interactable_component/interactable_component.tscn<>uid://en6qlams8p0y::::res://Assets/world_assets/0fc84f0c3d4c39f.png
+door_objectSCRIPT.gd::GDScript::-1::1695782131::0::1::::<>Node2D<>::
+::res://Scenes/interactable_objects/show_text/::1696452487
+show_text_objet.tscn::PackedScene::1555772899493665113::1696452487::0::1::::<><>::res://Scenes/interactable_objects/show_text/show_text_objetSCRIPT.gd<>uid://bct2yxswndyb4::::res://Componets/interactable_component/interactable_component.tscn<>uid://b0emw65s7eh5g::::res://Scenes/menu_GUI/visual_text_system/interactive_text.tscn
+show_text_objetSCRIPT.gd::GDScript::-1::1695577668::0::1::::<>Node2D<>::
+::res://Scenes/menu_GUI/::1696356580
+::res://Scenes/menu_GUI/main_Menu/::1696452486
+Camera2DSCRIPT.gd::GDScript::-1::1694809587::0::1::::<>Camera2D<>::
+main_menu.tscn::PackedScene::2988727213061318179::1696452486::0::1::::<><>::res://Scenes/menu_GUI/main_Menu/main_menuSCRIPT.gd<>res://Scenes/menu_GUI/main_Menu/menu_Select_ModeSCRIPT.gd<>res://Scenes/menu_GUI/main_Menu/Camera2DSCRIPT.gd<>uid://b28tobh1efu1g::::res://Assets/icons/exit_focus [#852].png<>uid://bvp4ekoy3r5kw::::res://Scenes/menu_GUI/template_scenes_gui/save_one.tscn
+main_menuSCRIPT.gd::GDScript::-1::1695530624::0::1::::<>Node2D<>::
+menu_Select_ModeSCRIPT.gd::GDScript::-1::1695229872::0::1::::<>Control<>::
+::res://Scenes/menu_GUI/player_gui_ui/::1696452487
+gui_ui_control.tscn::PackedScene::4789226911312528974::1696452487::0::1::::<><>::res://Scenes/menu_GUI/player_gui_ui/gui_ui_controlSCRIPT.gd
+gui_ui_controlSCRIPT.gd::GDScript::-1::1696452142::0::1::::<>CanvasLayer<>::
+::res://Scenes/menu_GUI/settings_Ui/::1696452487
+cofig_menu_ui.tscn::PackedScene::861922986694497830::1696452487::0::1::::<><>::res://Scenes/menu_GUI/settings_Ui/cofig_menu_uiSCRIPT.gd
+cofig_menu_uiSCRIPT.gd::GDScript::-1::1695335363::0::1::::<>Control<>::
+::res://Scenes/menu_GUI/template_scenes_gui/::1696356580
+SaveOneSCRIPT.gd::GDScript::-1::1694818012::0::1::::<>Control<>::
+save_one.tscn::PackedScene::3893120550357858858::1695227767::0::1::::<><>::res://Scenes/menu_GUI/template_scenes_gui/SaveOneSCRIPT.gd<>uid://b55seouy4adni
+::res://Scenes/menu_GUI/visual_text_system/::1696356580
+interactive_text.tscn::PackedScene::4150168852468008702::1695578731::0::1::::<><>::res://Scenes/menu_GUI/visual_text_system/interactive_textSCRIPT.gd
+interactive_textSCRIPT.gd::GDScript::-1::1695578189::0::1::::<>CanvasLayer<>::
+::res://Scenes/player_scene/::1696452487
+HurtBoxSCRIPT.gd::GDScript::-1::1695531344::0::1::::<>Area2D<>::
+life_ComponentSCRIPT.gd::GDScript::-1::1695782131::0::1::::<>Node2D<>::
+mogitone.tscn::PackedScene::4955206100843991408::1696452487::0::1::::<><>::res://Scenes/player_scene/mogitoneSCRIPT.gd<>uid://cah64q314r7fm::::res://Scenes/menu_GUI/player_gui_ui/gui_ui_control.tscn<>res://Scenes/player_scene/life_ComponentSCRIPT.gd<>res://Scenes/player_scene/HurtBoxSCRIPT.gd<>uid://beed74g0kjyk3::::res://Componets/show_damage_component/show_damage_component.tscn<>uid://bxojoxaw7l25i::::res://Assets/Textures/light.png
+mogitoneSCRIPT.gd::GDScript::-1::1695782131::0::1::::<>CharacterBody2D<>::
+::res://Scenes/world_scenes/::1696452486
+another_room.tscn::PackedScene::3283991495864690890::1696444517::0::1::::<><>::uid://dl0vrf48cy2mp
+another_roomSXRIPT.gd::GDScript::-1::1695782131::0::1::::<>Node2D<>::
+init_world.tscn::PackedScene::4510885804168694681::1696452486::0::1::::<><>::res://Scenes/world_scenes/init_worldSCRIPT.gd<>uid://cculrxymts3b5::::res://Scenes/player_scene/mogitone.tscn<>uid://cnup28cxsh1tj::::res://Scenes/world_scenes/Rooms/Testing_Room/TestingRoom.tscn<>uid://wfvl8k5r6fs0::::res://Scenes/interactable_objects/show_text/show_text_objet.tscn
+init_worldSCRIPT.gd::GDScript::-1::1695782131::0::1::::<>Node2D<>::
+::res://Scenes/world_scenes/Rooms/::1696445676
+::res://Scenes/world_scenes/Rooms/Testing_Room/::1696452487
+TestingRoom.tscn::PackedScene::5727544598518285999::1696452487::0::1::::<><>::uid://chsrdjhkryqtj::::res://Assets/world_assets/Dungeon Environment.png
+::res://Singletones/::1696356580
+save_class.gd::GDScript::-1::1695782131::0::1::::<>Node<>::

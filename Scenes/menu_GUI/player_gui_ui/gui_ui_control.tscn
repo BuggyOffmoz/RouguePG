@@ -1,0 +1,272 @@
+[gd_scene load_steps=11 format=3 uid="uid://cah64q314r7fm"]
+
+[ext_resource type="Script" path="res://Scenes/menu_GUI/player_gui_ui/gui_ui_controlSCRIPT.gd" id="1_cwdov"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oicma"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0vb8"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a0fx"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv543"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8aa17"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n17vv"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqvbm"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgr1v"]
+bg_color = Color(0.607843, 0.607843, 0.607843, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qxs1"]
+bg_color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="gui_ui_control" type="CanvasLayer" groups=["main_menu_group"]]
+process_mode = 3
+script = ExtResource("1_cwdov")
+
+[node name="LEFT_click" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 1064.0
+offset_top = 480.0
+offset_right = 1104.0
+offset_bottom = 520.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oicma")
+
+[node name="RIGTH_click" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 1121.0
+offset_top = 480.0
+offset_right = 1161.0
+offset_bottom = 520.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oicma")
+
+[node name="A_panel" type="Panel" parent="."]
+visible = false
+modulate = Color(0.0431373, 0.0431373, 0.0431373, 1)
+offset_left = 133.0
+offset_top = 525.0
+offset_right = 173.0
+offset_bottom = 565.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m0vb8")
+
+[node name="D_panel" type="Panel" parent="."]
+visible = false
+modulate = Color(0.054902, 0.054902, 0.054902, 1)
+offset_left = 220.0
+offset_top = 525.0
+offset_right = 260.0
+offset_bottom = 565.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0a0fx")
+
+[node name="W_panel" type="Panel" parent="."]
+visible = false
+modulate = Color(0.054902, 0.054902, 0.054902, 1)
+offset_left = 177.0
+offset_top = 480.0
+offset_right = 217.0
+offset_bottom = 520.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kv543")
+
+[node name="S_panel" type="Panel" parent="."]
+visible = false
+modulate = Color(0.0431373, 0.0431373, 0.0431373, 1)
+offset_left = 177.0
+offset_top = 525.0
+offset_right = 217.0
+offset_bottom = 565.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8aa17")
+
+[node name="dash_panel" type="Panel" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 36.0
+offset_top = 568.0
+offset_right = 128.0
+offset_bottom = 596.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n17vv")
+
+[node name="exit_menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 560.0
+offset_top = 189.0
+offset_right = 763.0
+offset_bottom = 489.0
+
+[node name="bg_panel" type="Panel" parent="exit_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause_label" type="Label" parent="exit_menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.5
+offset_top = 8.0
+offset_right = 25.5
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "PAUSE"
+
+[node name="continue_button" type="Button" parent="exit_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -15.5
+offset_right = 39.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="exit_button" type="Button" parent="exit_menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_top = -36.0
+offset_right = 18.5
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
+[node name="option_button" type="Button" parent="exit_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 22.5
+offset_right = 35.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="one" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 460.0
+offset_top = 606.0
+offset_right = 500.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oicma")
+
+[node name="two" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 518.0
+offset_top = 607.0
+offset_right = 558.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oicma")
+
+[node name="three" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 581.0
+offset_top = 607.0
+offset_right = 621.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oicma")
+
+[node name="four" type="Panel" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 644.0
+offset_top = 608.0
+offset_right = 684.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oicma")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 364.0
+offset_bottom = 49.0
+
+[node name="ButtonPanel" type="Panel" parent="."]
+offset_top = 512.0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hqvbm")
+
+[node name="Left" type="Panel" parent="ButtonPanel"]
+top_level = true
+layout_mode = 0
+offset_top = 512.0
+offset_right = 426.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgr1v")
+
+[node name="Center" type="Panel" parent="ButtonPanel"]
+top_level = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -208.0
+offset_right = 213.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgr1v")
+
+[node name="Right" type="Panel" parent="ButtonPanel"]
+top_level = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -208.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgr1v")
+
+[node name="Room" type="Panel" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 520.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3qxs1")
+
+[connection signal="pressed" from="exit_menu/continue_button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="exit_menu/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="exit_menu/option_button" to="." method="_on_option_button_pressed"]

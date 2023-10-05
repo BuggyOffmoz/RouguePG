@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7k2xsoei4xd4"]
+
+[ext_resource type="Script" path="res://Scenes/interactable_objects/door/door_objectSCRIPT.gd" id="1_pgvdf"]
+[ext_resource type="PackedScene" uid="uid://bct2yxswndyb4" path="res://Componets/interactable_component/interactable_component.tscn" id="2_uuo3n"]
+[ext_resource type="Texture2D" uid="uid://en6qlams8p0y" path="res://Assets/world_assets/0fc84f0c3d4c39f.png" id="3_yv7ha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1ftp"]
+size = Vector2(35, 10)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kint1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny18y"]
+size = Vector2(32, 38)
+
+[node name="door_object" type="Node2D" groups=["door_group"]]
+script = ExtResource("1_pgvdf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -23)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_yv7ha")
+
+[node name="player_spawn_door" type="Marker2D" parent="."]
+
+[node name="interactable_component" parent="." instance=ExtResource("2_uuo3n")]
+
+[node name="CollisionShape2D" parent="interactable_component/detect_interactable_player_area" index="0"]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_k1ftp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 32768
+collision_mask = 16
+physics_material_override = SubResource("PhysicsMaterial_kint1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -19)
+rotation = -3.14145
+shape = SubResource("RectangleShape2D_ny18y")
+one_way_collision_margin = 0.0
+debug_color = Color(1, 1, 1, 0.47451)
+
+[editable path="interactable_component"]

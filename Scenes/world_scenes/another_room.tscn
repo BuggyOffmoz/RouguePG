@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm114ik6xkees"]
+
+[ext_resource type="Texture2D" uid="uid://dl0vrf48cy2mp" path="res://Assets/world_assets/topdownrpg_indoor1.jpg" id="1_kj6hp"]
+[ext_resource type="Script" path="res://Scenes/world_scenes/another_roomSXRIPT.gd" id="1_ouei4"]
+[ext_resource type="PackedScene" uid="uid://du10ujx5dede3" path="res://Componets/room_spawn_component/spawn_room_component.tscn" id="2_j7jqy"]
+[ext_resource type="PackedScene" uid="uid://c7k2xsoei4xd4" path="res://Scenes/interactable_objects/door/door_object.tscn" id="2_xfk60"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecjg2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6pfb"]
+size = Vector2(11, 477)
+
+[node name="another_room" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_ouei4")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -1820.0
+offset_top = -959.0
+offset_right = 1653.0
+offset_bottom = 921.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ecjg2")
+
+[node name="room" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_kj6hp")
+
+[node name="spawn_room_component" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_j7jqy")]
+parent = NodePath("..")
+
+[node name="wall1" type="StaticBody2D" parent="."]
+collision_layer = 32768
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2(235.5, -1.5)
+shape = SubResource("RectangleShape2D_g6pfb")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(-231, 3)
+collision_layer = 32768
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(-2, -7)
+shape = SubResource("RectangleShape2D_g6pfb")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="wall3" type="StaticBody2D" parent="."]
+position = Vector2(-3, 197)
+rotation = 1.57303
+collision_layer = 32768
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+position = Vector2(15.9933, -3.03571)
+shape = SubResource("RectangleShape2D_g6pfb")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="wall4" type="StaticBody2D" parent="."]
+position = Vector2(-2, -229)
+rotation = 1.57303
+collision_layer = 32768
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
+position = Vector2(15.9933, -3.03571)
+shape = SubResource("RectangleShape2D_g6pfb")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="door_object" parent="." node_paths=PackedStringArray("spawn_component") instance=ExtResource("2_xfk60")]
+position = Vector2(-109, 208)
+door_id = 1
+text_path = "res://Scenes/world_scenes/init_world.tscn"
+spawn_component = NodePath("../spawn_room_component")
+
+[node name="Sprite2D" parent="door_object" index="0"]
+self_modulate = Color(0.258824, 0.258824, 0.258824, 0.662745)
+
+[node name="player_spawn_door" parent="door_object" index="1"]
+position = Vector2(0, -11)
+
+[node name="detect_interactable_player_area" parent="door_object/interactable_component" index="0"]
+position = Vector2(-1, -11)
+
+[node name="StaticBody2D" parent="door_object" index="3"]
+position = Vector2(0, 49)
+
+[editable path="door_object"]
+[editable path="door_object/interactable_component"]

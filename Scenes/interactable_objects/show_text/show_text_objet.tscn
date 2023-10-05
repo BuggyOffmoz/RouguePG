@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://wfvl8k5r6fs0"]
+
+[ext_resource type="Script" path="res://Scenes/interactable_objects/show_text/show_text_objetSCRIPT.gd" id="1_athik"]
+[ext_resource type="PackedScene" uid="uid://bct2yxswndyb4" path="res://Componets/interactable_component/interactable_component.tscn" id="2_byvus"]
+[ext_resource type="PackedScene" uid="uid://b0emw65s7eh5g" path="res://Scenes/menu_GUI/visual_text_system/interactive_text.tscn" id="3_ybj8h"]
+
+[node name="show_text_objet" type="Node2D"]
+script = ExtResource("1_athik")
+
+[node name="interactable_component" parent="." instance=ExtResource("2_byvus")]
+
+[node name="interactive_text" parent="." instance=ExtResource("3_ybj8h")]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -20.0
+offset_top = -39.0
+offset_right = 20.0
+offset_bottom = 1.0

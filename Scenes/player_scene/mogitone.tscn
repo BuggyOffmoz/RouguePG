@@ -1,0 +1,200 @@
+[gd_scene load_steps=15 format=3 uid="uid://cculrxymts3b5"]
+
+[ext_resource type="Script" path="res://Scenes/player_scene/mogitoneSCRIPT.gd" id="1_t3clv"]
+[ext_resource type="PackedScene" uid="uid://cah64q314r7fm" path="res://Scenes/menu_GUI/player_gui_ui/gui_ui_control.tscn" id="2_62qi2"]
+[ext_resource type="Script" path="res://Scenes/player_scene/life_ComponentSCRIPT.gd" id="3_qhlua"]
+[ext_resource type="Script" path="res://Scenes/player_scene/HurtBoxSCRIPT.gd" id="4_ej0x4"]
+[ext_resource type="PackedScene" uid="uid://beed74g0kjyk3" path="res://Componets/show_damage_component/show_damage_component.tscn" id="5_oqy3j"]
+[ext_resource type="Texture2D" uid="uid://bxojoxaw7l25i" path="res://Assets/Textures/light.png" id="6_0sjgg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_af66f"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_anygx"]
+radius = 14.0357
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od4kx"]
+size = Vector2(20, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08hs5"]
+size = Vector2(20, 26)
+
+[sub_resource type="Animation" id="Animation_3mupv"]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Areas/HittBox/Collision_attack:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"finishing_attack"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gr6dd"]
+resource_name = "roll"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"change_speed"
+}, {
+"args": [],
+"method": &"final_speed"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Areas/HurtBox/hurtBox_Collision:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_srd7t"]
+_data = {
+"attack": SubResource("Animation_3mupv"),
+"roll": SubResource("Animation_gr6dd")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d87l2"]
+size = Vector2(20, 8)
+
+[node name="mogitone" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(2, 2)
+collision_mask = 32768
+script = ExtResource("1_t3clv")
+
+[node name="sprite" type="Panel" parent="."]
+offset_left = -10.0
+offset_top = -34.0
+offset_right = 10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_af66f")
+
+[node name="Panel" type="Panel" parent="sprite"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 34.0
+offset_right = 19.0
+offset_bottom = 35.0
+
+[node name="gui_ui_control" parent="." node_paths=PackedStringArray("lifecomponent") instance=ExtResource("2_62qi2")]
+lifecomponent = NodePath("../another_Components_Managers/life_Component")
+
+[node name="show_damage_component" parent="." instance=ExtResource("5_oqy3j")]
+position = Vector2(10, -34)
+
+[node name="another_Components_Managers" type="Node" parent="."]
+
+[node name="life_Component" type="Node2D" parent="another_Components_Managers" groups=["life_player_group"]]
+script = ExtResource("3_qhlua")
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="HittBox" type="Area2D" parent="Areas"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Collision_attack" type="CollisionShape2D" parent="Areas/HittBox"]
+light_mask = 2
+position = Vector2(35, -18)
+shape = SubResource("CircleShape2D_anygx")
+disabled = true
+one_way_collision_margin = 0.0
+debug_color = Color(0.996078, 0, 0.180392, 0.419608)
+
+[node name="detectar_paredes" type="Area2D" parent="Areas"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/detectar_paredes"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_od4kx")
+
+[node name="HurtBox" type="Area2D" parent="Areas" node_paths=PackedStringArray("life_path")]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("4_ej0x4")
+life_path = NodePath("../../another_Components_Managers/life_Component")
+
+[node name="hurtBox_Collision" type="CollisionShape2D" parent="Areas/HurtBox"]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_08hs5")
+debug_color = Color(0.290196, 0.627451, 0, 0.682353)
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="attack_cooldown" type="Timer" parent="Timers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="dash_timer" type="Timer" parent="Timers"]
+wait_time = 0.4
+one_shot = true
+
+[node name="dash_cooldown" type="Timer" parent="Timers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="delay_load" type="Timer" parent="Timers"]
+
+[node name="player_animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_srd7t")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_d87l2")
+debug_color = Color(0.87451, 0.972549, 1, 0.419608)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(4.5, -17)
+scale = Vector2(0.2, 0.2)
+range_item_cull_mask = 512
+shadow_enabled = true
+shadow_item_cull_mask = 512
+texture = ExtResource("6_0sjgg")
+
+[node name="Light" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.5, 1.5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_0sjgg")
+
+[connection signal="area_entered" from="Areas/HittBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="Timers/attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="Timers/dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Timers/dash_cooldown" to="." method="_on_dash_cooldown_timeout"]

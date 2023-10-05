@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dejsa75asp0rx"]
+
+[ext_resource type="Script" path="res://Scenes/enemy_scenes/dummy/dummySCRIPT.gd" id="1_ng4wd"]
+[ext_resource type="PackedScene" uid="uid://beed74g0kjyk3" path="res://Componets/show_damage_component/show_damage_component.tscn" id="2_647fr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4ace"]
+radius = 9.0
+height = 34.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5e6b"]
+size = Vector2(16, 20)
+
+[node name="dummy" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+gravity_scale = 0.0
+script = ExtResource("1_ng4wd")
+
+[node name="hurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+shape = SubResource("CapsuleShape2D_c4ace")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 9.0
+offset_bottom = 16.0
+
+[node name="hitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+position = Vector2(0, -35)
+shape = SubResource("RectangleShape2D_h5e6b")
+debug_color = Color(0.992157, 0, 0.278431, 0.419608)
+
+[node name="attack_timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="show_damage_component" parent="." instance=ExtResource("2_647fr")]
+position = Vector2(7, -22)
+
+[connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]

@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0emw65s7eh5g"]
+
+[ext_resource type="Script" path="res://Scenes/menu_GUI/visual_text_system/interactive_textSCRIPT.gd" id="1_1uhtu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abn5k"]
+
+[sub_resource type="Animation" id="Animation_0kjq3"]
+resource_name = "idle_text"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("continue_text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(974, 673), Vector2(974, 665), Vector2(974, 660), Vector2(974, 660), Vector2(974, 673)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ikxu"]
+_data = {
+"idle_text": SubResource("Animation_0kjq3")
+}
+
+[node name="interactive_text" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_1uhtu")
+
+[node name="bg_panel" type="Panel" parent="."]
+self_modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -473.0
+offset_top = -135.0
+offset_right = 474.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_abn5k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 167.0
+offset_top = 586.0
+offset_right = 1115.0
+offset_bottom = 705.0
+
+[node name="continue_text" type="Label" parent="."]
+offset_left = 974.0
+offset_top = 660.0
+offset_right = 1109.0
+offset_bottom = 686.0
+text = "Press mouse click"
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3ikxu")
+}

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://beed74g0kjyk3"]
+
+[ext_resource type="Script" path="res://Componets/show_damage_component/show_damage_componentSCRIPT.gd" id="1_ni5yg"]
+
+[node name="show_damage_component" type="Node2D"]
+script = ExtResource("1_ni5yg")
+
+[node name="init_point" type="Marker2D" parent="."]

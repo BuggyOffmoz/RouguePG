@@ -1,0 +1,4 @@
+res://Scenes/player_scene/mogitone.tscn
+res://Scenes/player_scene/mogitoneSCRIPT.gd
+res://Scenes/menu_GUI/player_gui_ui/gui_ui_control.tscn
+res://Scenes/menu_GUI/player_gui_ui/gui_ui_controlSCRIPT.gd

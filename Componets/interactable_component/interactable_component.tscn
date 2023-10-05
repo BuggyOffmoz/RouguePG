@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bct2yxswndyb4"]
+
+[ext_resource type="Script" path="res://Componets/interactable_component/interactable_componentSCRIPT.gd" id="1_vdi5q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_baaq4"]
+radius = 32.0
+
+[node name="interactable_component" type="Node2D" groups=["interactable_group"]]
+script = ExtResource("1_vdi5q")
+
+[node name="detect_interactable_player_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_interactable_player_area"]
+shape = SubResource("CircleShape2D_baaq4")
+
+[node name="interact_label_text" type="Label" parent="."]
+visible = false
+offset_left = -10.0
+offset_top = -62.0
+offset_right = 30.0
+offset_bottom = -36.0
+text = "[E]"
+
+[connection signal="area_entered" from="detect_interactable_player_area" to="." method="_on_detect_interactable_player_area_area_entered"]
+[connection signal="area_exited" from="detect_interactable_player_area" to="." method="_on_detect_interactable_player_area_area_exited"]
