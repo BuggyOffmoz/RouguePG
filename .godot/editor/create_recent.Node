@@ -1,11 +1,14 @@
+Node2D
+Node
+Camera2D
 Panel
+Sprite2D
 PointLight2D
 TileMap
 Timer
 Marker2D
 CollisionShape2D
 StaticBody2D
-Sprite2D
 Label
 Area2D
 AnimationPlayer
@@ -14,8 +17,6 @@ CanvasLayer
 SubViewport
 CharacterBody2D
 RigidBody2D
-Node2D
-Node
 Button
 Control
 TextureButton
@@ -23,7 +24,6 @@ OptionButton
 HSlider
 MenuBar
 ProgressBar
-Camera2D
 ColorRect
 TextureRect
 GridContainer

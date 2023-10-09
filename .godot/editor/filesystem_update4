@@ -1,4 +1,5 @@
-res://Scenes/player_scene/mogitone.tscn
-res://Scenes/player_scene/mogitoneSCRIPT.gd
-res://Scenes/menu_GUI/player_gui_ui/gui_ui_control.tscn
-res://Scenes/menu_GUI/player_gui_ui/gui_ui_controlSCRIPT.gd
+res://Scenes/generation_of_rooms/rooms.tscn
+res://Scenes/generation_of_rooms/generator.gd
+res://Scenes/generation_of_rooms/generator.tscn
+res://Scenes/generation_of_rooms/dungeon_generation.gd
+res://Scenes/generation_of_rooms/rooms.gd
