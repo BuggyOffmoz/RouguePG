@@ -90,6 +90,7 @@ E={
 2d_render/layer_10="World"
 2d_physics/layer_1="player_detect_collision"
 2d_navigation/layer_1="NormalNavegable"
+2d_physics/layer_2="player_instance"
 2d_physics/layer_4="hurtBox_enemy"
 2d_physics/layer_5="limited_area"
 2d_physics/layer_6="hurtBox_player"

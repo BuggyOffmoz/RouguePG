@@ -16,7 +16,8 @@ var is_dash: bool = false
 var is_dash_cooldown = false
 
 
-
+# VARIABLES FLOATS
+var hiddent_percent = 0.2
 
 # VARIABLES VECTORES------------------------------------------------------------
 var direction: Vector2 = Vector2(0,0)
@@ -37,7 +38,6 @@ func _input(event):
 		get_tree().call_group("interactable_group","interact")
 	
 	if event.is_action_pressed("one"):
-		print("one")
 		actual_weapon = 1
 		$gui_ui_control.actualize_actual_weapon(1)
 	if event.is_action_pressed("two"):
@@ -142,3 +142,10 @@ func _on_hurt_box_area_entered(area):
 
 func _on_attack_cooldown_timeout():
 	is_attack_cooldown = false
+
+
+func _on_area_detect_timeout():
+	if $Areas/enemy_detect_this_area/CollisionShape2D.disabled == false:
+		$Areas/enemy_detect_this_area/CollisionShape2D.disabled = true
+	else:
+		$Areas/enemy_detect_this_area/CollisionShape2D.disabled = false
