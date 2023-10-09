@@ -17,6 +17,11 @@ func _input(event):
 	
 	
 	if event is InputEventMouseButton:
+		if is_paused == true:
+			print("a")
+			get_tree().paused = false
+			
+		
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			$LEFT_click.self_modulate = Color.WHITE
 		elif event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
@@ -126,4 +131,4 @@ func _on_exit_button_pressed():
 func _on_option_button_pressed():
 		var option_instance = option_scene_path.instantiate()
 		is_config = true
-		$".".add_child(option_instance)
+		self.add_child(option_instance)

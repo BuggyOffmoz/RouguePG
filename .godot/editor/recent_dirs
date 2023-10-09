@@ -1,3 +1,6 @@
+res://Scenes/enemy_scenes
+res://Componets/sprite_enemy_component
+res://Scenes/enemy_scenes/base_enemy
 res://Scenes/world_scenes/Rooms/Testing_Room
 res://Componets/show_damage_component
 res://Scenes/enemy_scenes/dummy

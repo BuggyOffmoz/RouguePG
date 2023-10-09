@@ -57,12 +57,11 @@ offset_bottom = 520.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oicma")
 
 [node name="A_panel" type="Panel" parent="."]
-visible = false
 modulate = Color(0.0431373, 0.0431373, 0.0431373, 1)
 offset_left = 133.0
-offset_top = 525.0
+offset_top = 396.0
 offset_right = 173.0
-offset_bottom = 565.0
+offset_bottom = 436.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_m0vb8")
 
 [node name="D_panel" type="Panel" parent="."]
