@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1696874946
-BaseEnemySCRIPT.gd::GDScript::-1::1696572728::0::1::::BaseEnemy<>CharacterBody2D<>::
+::res://::1696976872
+BaseEnemySCRIPT.gd::GDScript::-1::1696976872::0::1::::BaseEnemy<>CharacterBody2D<>::
 icon.svg::CompressedTexture2D::1067822620190701506::1694742376::1694742385::1::::<><>::
 README.md::TextFile::-1::1695240835::0::1::::<><>::
 ::res://Assets/::1696547032
@@ -28,11 +28,12 @@ light.png::CompressedTexture2D::4030238039054109448::1696451079::1696451080::1::
 Dungeon Environment.png::CompressedTexture2D::5302360102686065951::1696444968::1696444968::1::::<><>::
 topdownrpg_indoor1.jpg::CompressedTexture2D::7984254499212728147::1695228105::1695228117::1::::<><>::
 ::res://Classes/::1694742435
-::res://Componets/::1696546605
+::res://Componets/::1696977883
 ::res://Componets/areas_components/::1696543180
-::res://Componets/areas_components/player_detect_component/::1696874959
-PlayerDetectArea.tscn::PackedScene::8608525691222835562::1696874959::0::1::::<><>::res://Componets/areas_components/player_detect_component/PlayerDetectAreaSCRIPT.gd
+::res://Componets/areas_components/player_detect_component/::1696974636
+PlayerDetectArea.tscn::PackedScene::8608525691222835562::1696974636::0::1::::<><>::res://Componets/areas_components/player_detect_component/PlayerDetectAreaSCRIPT.gd
 PlayerDetectAreaSCRIPT.gd::GDScript::-1::1696569066::0::1::::PlayerDetectAreaComponent<>Area2D<>::
+::res://Componets/Battle_Mode_Component/::1696977883
 ::res://Componets/interactable_component/::1696444517
 interactable_component.tscn::PackedScene::2567705003015343815::1696444517::0::1::::<><>::res://Componets/interactable_component/interactable_componentSCRIPT.gd
 interactable_componentSCRIPT.gd::GDScript::-1::1695577435::0::1::::<>Node2D<>::
@@ -44,22 +45,24 @@ label_mov.tscn::PackedScene::4977972702277891908::1695578731::0::1::::<><>::res:
 label_movSCRIPT.gd::GDScript::-1::1695416171::0::1::::<>CharacterBody2D<>::
 show_damage_component.tscn::PackedScene::2675674399240337240::1695578731::0::1::::<><>::res://Componets/show_damage_component/show_damage_componentSCRIPT.gd
 show_damage_componentSCRIPT.gd::GDScript::-1::1695416258::0::1::::<>Node2D<>::
-::res://Componets/sprite_enemy_component/::1696874959
-sprite_enemy_component.tscn::PackedScene::8474699745373814492::1696874959::0::1::::<><>::res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd
+::res://Componets/sprite_enemy_component/::1696974636
+sprite_enemy_component.tscn::PackedScene::8474699745373814492::1696974636::0::1::::<><>::res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd
 sprite_enemy_componentSCRIPT.gd::GDScript::-1::1696547111::0::1::::SpriteEnemyComponent<>Sprite2D<>::
 ::res://Scenes/::1696356580
-::res://Scenes/enemy_scenes/::1696874959
-all_enemy_manager.tscn::PackedScene::6277945393160406562::1696874959::0::1::::<><>::res://Scenes/enemy_scenes/all_enemy_managerSCRIPT.gd
+::res://Scenes/enemy_scenes/::1696974636
+all_enemy_manager.tscn::PackedScene::6277945393160406562::1696974636::0::1::::<><>::res://Scenes/enemy_scenes/all_enemy_managerSCRIPT.gd
 all_enemy_managerSCRIPT.gd::GDScript::-1::1696566937::0::1::::<>Node2D<>::
-::res://Scenes/enemy_scenes/base_enemy/::1696874959
-base_enemy.tscn::PackedScene::4566475611747287231::1696874959::0::1::::<><>::res://BaseEnemySCRIPT.gd<>uid://duwbfpo42bo0i::::res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn<>uid://ds0hcjbdwpg7m::::res://Componets/sprite_enemy_component/sprite_enemy_component.tscn
-::res://Scenes/enemy_scenes/Brown_Fungus_Enemy/::1696874959
-BrownFungusEnemy.tscn::PackedScene::5896446693798740485::1696874959::0::1::::<><>::res://BaseEnemySCRIPT.gd<>uid://duwbfpo42bo0i::::res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn<>uid://b450nfi5ocbh8::::res://Assets/Enemy_Assets/mushrooms_pixel_asset.png<>res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd
+::res://Scenes/enemy_scenes/another_fungus/::1696974636
+another_fungus_enemy.tscn::PackedScene::3773064338306684611::1696974636::0::1::::<><>::res://BaseEnemySCRIPT.gd<>uid://duwbfpo42bo0i::::res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn<>uid://b450nfi5ocbh8::::res://Assets/Enemy_Assets/mushrooms_pixel_asset.png<>res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd
+::res://Scenes/enemy_scenes/base_enemy/::1696976872
+base_enemy.tscn::PackedScene::4566475611747287231::1696976872::0::1::::<><>::res://BaseEnemySCRIPT.gd<>uid://duwbfpo42bo0i::::res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn<>uid://ds0hcjbdwpg7m::::res://Componets/sprite_enemy_component/sprite_enemy_component.tscn
+::res://Scenes/enemy_scenes/Brown_Fungus_Enemy/::1696976414
+BrownFungusEnemy.tscn::PackedScene::5896446693798740485::1696976414::0::1::::<><>::res://BaseEnemySCRIPT.gd<>uid://duwbfpo42bo0i::::res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn<>uid://b450nfi5ocbh8::::res://Assets/Enemy_Assets/mushrooms_pixel_asset.png<>res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd
 ::res://Scenes/enemy_scenes/dummy/::1696356579
 dummy.tscn::PackedScene::7459691458403777237::1695578731::0::1::::<><>::res://Scenes/enemy_scenes/dummy/dummySCRIPT.gd<>uid://beed74g0kjyk3
 dummySCRIPT.gd::GDScript::-1::1695416512::0::1::::<>RigidBody2D<>::
-::res://Scenes/enemy_scenes/Red_Fungus_Enemy/::1696874959
-RedFungusEnemy.tscn::PackedScene::6362513007143247069::1696874959::0::1::::<><>::res://BaseEnemySCRIPT.gd<>uid://duwbfpo42bo0i::::res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn<>uid://b450nfi5ocbh8::::res://Assets/Enemy_Assets/mushrooms_pixel_asset.png<>res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd
+::res://Scenes/enemy_scenes/Red_Fungus_Enemy/::1696974636
+RedFungusEnemy.tscn::PackedScene::6362513007143247069::1696974636::0::1::::<><>::res://BaseEnemySCRIPT.gd<>uid://duwbfpo42bo0i::::res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn<>uid://b450nfi5ocbh8::::res://Assets/Enemy_Assets/mushrooms_pixel_asset.png<>res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd
 ::res://Scenes/interactable_objects/::1696356579
 ::res://Scenes/interactable_objects/door/::1696541937
 door_object.tscn::PackedScene::7041209540649506631::1696541937::0::1::::<><>::res://Scenes/interactable_objects/door/door_objectSCRIPT.gd<>uid://bct2yxswndyb4
@@ -68,13 +71,13 @@ door_objectSCRIPT.gd::GDScript::-1::1695782131::0::1::::<>Node2D<>::
 show_text_objet.tscn::PackedScene::1555772899493665113::1696541937::0::1::::<><>::res://Scenes/interactable_objects/show_text/show_text_objetSCRIPT.gd<>uid://bct2yxswndyb4
 show_text_objetSCRIPT.gd::GDScript::-1::1695577668::0::1::::<>Node2D<>::
 ::res://Scenes/menu_GUI/::1696356580
-::res://Scenes/menu_GUI/main_Menu/::1696874958
+::res://Scenes/menu_GUI/main_Menu/::1696974635
 Camera2DSCRIPT.gd::GDScript::-1::1694809587::0::1::::<>Camera2D<>::
-main_menu.tscn::PackedScene::2988727213061318179::1696874958::0::1::::<><>::res://Scenes/menu_GUI/main_Menu/main_menuSCRIPT.gd<>res://Scenes/menu_GUI/main_Menu/menu_Select_ModeSCRIPT.gd<>res://Scenes/menu_GUI/main_Menu/Camera2DSCRIPT.gd<>uid://b28tobh1efu1g::::res://Assets/icons/exit_focus [#852].png<>uid://bvp4ekoy3r5kw::::res://Scenes/menu_GUI/template_scenes_gui/save_one.tscn
+main_menu.tscn::PackedScene::2988727213061318179::1696974635::0::1::::<><>::res://Scenes/menu_GUI/main_Menu/main_menuSCRIPT.gd<>res://Scenes/menu_GUI/main_Menu/menu_Select_ModeSCRIPT.gd<>res://Scenes/menu_GUI/main_Menu/Camera2DSCRIPT.gd<>uid://b28tobh1efu1g::::res://Assets/icons/exit_focus [#852].png<>uid://bvp4ekoy3r5kw::::res://Scenes/menu_GUI/template_scenes_gui/save_one.tscn
 main_menuSCRIPT.gd::GDScript::-1::1695530624::0::1::::<>Node2D<>::
 menu_Select_ModeSCRIPT.gd::GDScript::-1::1695229872::0::1::::<>Control<>::
-::res://Scenes/menu_GUI/player_gui_ui/::1696874959
-gui_ui_control.tscn::PackedScene::4789226911312528974::1696874959::0::1::::<><>::res://Scenes/menu_GUI/player_gui_ui/gui_ui_controlSCRIPT.gd
+::res://Scenes/menu_GUI/player_gui_ui/::1696974636
+gui_ui_control.tscn::PackedScene::4789226911312528974::1696974636::0::1::::<><>::res://Scenes/menu_GUI/player_gui_ui/gui_ui_controlSCRIPT.gd
 gui_ui_controlSCRIPT.gd::GDScript::-1::1696571243::0::1::::<>CanvasLayer<>::
 ::res://Scenes/menu_GUI/settings_Ui/::1696541938
 cofig_menu_ui.tscn::PackedScene::861922986694497830::1696541938::0::1::::<><>::res://Scenes/menu_GUI/settings_Ui/cofig_menu_uiSCRIPT.gd
@@ -85,18 +88,18 @@ save_one.tscn::PackedScene::3893120550357858858::1695227767::0::1::::<><>::res:/
 ::res://Scenes/menu_GUI/visual_text_system/::1696356580
 interactive_text.tscn::PackedScene::4150168852468008702::1695578731::0::1::::<><>::res://Scenes/menu_GUI/visual_text_system/interactive_textSCRIPT.gd
 interactive_textSCRIPT.gd::GDScript::-1::1695578189::0::1::::<>CanvasLayer<>::
-::res://Scenes/player_scene/::1696874959
+::res://Scenes/player_scene/::1696974635
 HurtBoxSCRIPT.gd::GDScript::-1::1695531344::0::1::::<>Area2D<>::
 life_ComponentSCRIPT.gd::GDScript::-1::1695782131::0::1::::<>Node2D<>::
-mogitone.tscn::PackedScene::4955206100843991408::1696874959::0::1::::<><>::res://Scenes/player_scene/mogitoneSCRIPT.gd<>uid://cah64q314r7fm::::res://Scenes/menu_GUI/player_gui_ui/gui_ui_control.tscn<>res://Scenes/player_scene/life_ComponentSCRIPT.gd<>res://Scenes/player_scene/HurtBoxSCRIPT.gd<>uid://beed74g0kjyk3::::res://Componets/show_damage_component/show_damage_component.tscn<>uid://bxojoxaw7l25i::::res://Assets/Textures/light.png
+mogitone.tscn::PackedScene::4955206100843991408::1696974635::0::1::::<><>::res://Scenes/player_scene/mogitoneSCRIPT.gd<>uid://cah64q314r7fm::::res://Scenes/menu_GUI/player_gui_ui/gui_ui_control.tscn<>res://Scenes/player_scene/life_ComponentSCRIPT.gd<>res://Scenes/player_scene/HurtBoxSCRIPT.gd<>uid://beed74g0kjyk3::::res://Componets/show_damage_component/show_damage_component.tscn<>uid://bxojoxaw7l25i::::res://Assets/Textures/light.png
 mogitoneSCRIPT.gd::GDScript::-1::1696571781::0::1::::<>CharacterBody2D<>::
-::res://Scenes/world_scenes/::1696874959
+::res://Scenes/world_scenes/::1696974635
 another_room.tscn::PackedScene::3283991495864690890::1696444517::0::1::::<><>::uid://dl0vrf48cy2mp
 another_roomSXRIPT.gd::GDScript::-1::1695782131::0::1::::<>Node2D<>::
-init_world.tscn::PackedScene::4510885804168694681::1696874959::0::1::::<><>::res://Scenes/world_scenes/init_worldSCRIPT.gd<>uid://cculrxymts3b5::::res://Scenes/player_scene/mogitone.tscn<>uid://cnup28cxsh1tj::::res://Scenes/world_scenes/Rooms/Testing_Room/TestingRoom.tscn<>uid://wfvl8k5r6fs0::::res://Scenes/interactable_objects/show_text/show_text_objet.tscn<>uid://cqaju6uf74bo4::::res://Scenes/enemy_scenes/Brown_Fungus_Enemy/BrownFungusEnemy.tscn<>uid://cwwbwos84vl2d::::res://Scenes/enemy_scenes/Red_Fungus_Enemy/RedFungusEnemy.tscn
+init_world.tscn::PackedScene::4510885804168694681::1696974635::0::1::::<><>::res://Scenes/world_scenes/init_worldSCRIPT.gd<>uid://cculrxymts3b5::::res://Scenes/player_scene/mogitone.tscn<>uid://cnup28cxsh1tj::::res://Scenes/world_scenes/Rooms/Testing_Room/TestingRoom.tscn<>uid://wfvl8k5r6fs0::::res://Scenes/interactable_objects/show_text/show_text_objet.tscn<>uid://cqaju6uf74bo4::::res://Scenes/enemy_scenes/Brown_Fungus_Enemy/BrownFungusEnemy.tscn<>uid://cwwbwos84vl2d::::res://Scenes/enemy_scenes/Red_Fungus_Enemy/RedFungusEnemy.tscn
 init_worldSCRIPT.gd::GDScript::-1::1695782131::0::1::::<>Node2D<>::
 ::res://Scenes/world_scenes/Rooms/::1696445676
-::res://Scenes/world_scenes/Rooms/Testing_Room/::1696874959
-TestingRoom.tscn::PackedScene::5727544598518285999::1696874959::0::1::::<><>::uid://chsrdjhkryqtj::::res://Assets/world_assets/Dungeon Environment.png
+::res://Scenes/world_scenes/Rooms/Testing_Room/::1696974636
+TestingRoom.tscn::PackedScene::5727544598518285999::1696974636::0::1::::<><>::uid://chsrdjhkryqtj::::res://Assets/world_assets/Dungeon Environment.png
 ::res://Singletones/::1696356580
 save_class.gd::GDScript::-1::1695782131::0::1::::<>Node<>::

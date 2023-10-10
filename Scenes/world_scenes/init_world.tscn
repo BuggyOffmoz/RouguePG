@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5jdvopi1o5rp"]
+[gd_scene load_steps=7 format=3 uid="uid://b5jdvopi1o5rp"]
 
 [ext_resource type="Script" path="res://Scenes/world_scenes/init_worldSCRIPT.gd" id="1_b207c"]
 [ext_resource type="PackedScene" uid="uid://cculrxymts3b5" path="res://Scenes/player_scene/mogitone.tscn" id="2_hc6ot"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://wfvl8k5r6fs0" path="res://Scenes/interactable_objects/show_text/show_text_objet.tscn" id="4_d7hfg"]
 [ext_resource type="PackedScene" uid="uid://cqaju6uf74bo4" path="res://Scenes/enemy_scenes/Brown_Fungus_Enemy/BrownFungusEnemy.tscn" id="4_o5hlo"]
 [ext_resource type="PackedScene" uid="uid://cwwbwos84vl2d" path="res://Scenes/enemy_scenes/Red_Fungus_Enemy/RedFungusEnemy.tscn" id="5_wru0s"]
-[ext_resource type="PackedScene" uid="uid://bt0x23cn2gtwl" path="res://Scenes/enemy_scenes/another_fungus/another_fungus_enemy.tscn" id="6_it4pm"]
 
 [node name="init_world" type="Node2D"]
 script = ExtResource("1_b207c")
@@ -27,10 +26,6 @@ scale = Vector2(0.4, 0.4)
 [node name="wait_time" type="Timer" parent="TestingRoom/RedFungusEnemy"]
 wait_time = 0.6
 one_shot = true
-
-[node name="another_fungus_enemy" parent="TestingRoom" instance=ExtResource("6_it4pm")]
-position = Vector2(416.01, 60.8049)
-scale = Vector2(0.5, 0.5)
 
 [node name="mogitone" parent="." instance=ExtResource("2_hc6ot")]
 position = Vector2(593, 471)

@@ -1,8 +1,9 @@
+res://Scenes/enemy_scenes/base_enemy/base_enemy.tscn
+res://BaseEnemySCRIPT.gd
 res://Scenes/menu_GUI/main_Menu/main_menu.tscn
 res://Scenes/world_scenes/init_world.tscn
 res://Scenes/player_scene/mogitone.tscn
 res://Scenes/world_scenes/Rooms/Testing_Room/TestingRoom.tscn
-res://Scenes/enemy_scenes/base_enemy/base_enemy.tscn
 res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn
 res://Componets/sprite_enemy_component/sprite_enemy_component.tscn
 res://Scenes/enemy_scenes/all_enemy_manager.tscn
@@ -10,3 +11,5 @@ res://Scenes/enemy_scenes/Brown_Fungus_Enemy/BrownFungusEnemy.tscn
 res://Scenes/menu_GUI/player_gui_ui/gui_ui_control.tscn
 res://Scenes/enemy_scenes/Red_Fungus_Enemy/RedFungusEnemy.tscn
 res://Scenes/enemy_scenes/another_fungus/another_fungus_enemy.tscn
+res://Componets/Battle_Mode_Component/battle_room_component/battle_room_component.tscn
+res://Componets/Battle_Mode_Component/battle_room_component/battle_room_componentSCRIPT.gd

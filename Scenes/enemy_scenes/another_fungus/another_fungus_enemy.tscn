@@ -191,8 +191,6 @@ player_detect_component = NodePath("PlayerDetectArea")
 self_animation_component = NodePath("SpriteEnemyComponent")
 max_life = 500
 life_actual_amount = 500
-dextery = 2
-viewer = 1
 static_enemy = true
 
 [node name="PlayerDetectArea" parent="." node_paths=PackedStringArray("base_enemy_component") instance=ExtResource("2_ximo5")]

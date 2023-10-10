@@ -6,15 +6,36 @@ class_name BaseEnemy
 @export var self_animation_component: SpriteEnemyComponent
 
 
+
 # VARIABLES INTS
-@export var max_life: int
-@export var life_actual_amount: int
-@export var dextery: int
-@export var viewer: int
+@export_category("Basic Create Enemy")
+@export_group("Stats")
+@export_range(0,10000) var max_life: int
+var life_actual_amount: int
+var max_melee_atack: int
+var min_melee_atack: int
+var max_magic_atack: int
+var min_magic_atack: int
+@export_range(0,500) var max_Mana: int
+@export_range(0,15) var strength: int
+@export_range(0,15) var dextery: int
+@export_range(0,15) var intelligence: int
+@export_range(0,15) var focus: int
+@export_range(0,15) var accuracy: int
 
-# VARIABLES ARRAYS
-@export var resistance: Array[String]
 
+@export_group("Flags")
+@export_enum("Fungus","Henchman", "Normal", "Command", "Boss") var enemy_range: String
+@export var static_enemy = false
+@export var resistance_to_buffs = false
+@export_subgroup("Resistances")
+@export_range(0,20) var melee_debuff: int
+@export_range(0,20) var magic_debuff: int
+@export_range(0,20) var ligth_debuff: int
+@export_range(0,20) var dark_debuff: int
+@export_range(0,20) var fire_debuff: int
+@export_range(0,20) var water_debuff: int
+@export_range(0,20) var venom_debuff: int
 
 # VARIABLES BOOLEANS
 var idle = true
@@ -22,7 +43,7 @@ var patrol = false
 var in_alert = false
 var chase_mode = false
 var in_battle = false
-@export var static_enemy = false
+
 # FUNC
 
 func _ready():

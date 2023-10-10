@@ -8,6 +8,7 @@
 script = ExtResource("1_0sn6o")
 player_detect_component = NodePath("PlayerDetectArea")
 self_animation_component = NodePath("SpriteEnemyComponent")
+enemy_range = "Fungus"
 
 [node name="PlayerDetectArea" parent="." node_paths=PackedStringArray("base_enemy_component") instance=ExtResource("2_xe4yi")]
 base_enemy_component = NodePath("..")
