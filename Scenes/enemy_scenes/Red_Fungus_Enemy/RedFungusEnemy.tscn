@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwwbwos84vl2d"]
+[gd_scene load_steps=12 format=3 uid="uid://cwwbwos84vl2d"]
 
-[ext_resource type="Script" path="res://BaseEnemySCRIPT.gd" id="1_572qg"]
+[ext_resource type="Script" path="res://Scenes/enemy_scenes/base_enemy/BaseEnemySCRIPT.gd" id="1_mmx50"]
 [ext_resource type="PackedScene" uid="uid://duwbfpo42bo0i" path="res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn" id="2_3n33y"]
+[ext_resource type="PackedScene" uid="uid://csl8s55rmwhqx" path="res://Componets/areas_components/player_detect_component/start_battle_area_detect.tscn" id="3_act61"]
 [ext_resource type="Texture2D" uid="uid://b450nfi5ocbh8" path="res://Assets/Enemy_Assets/mushrooms_pixel_asset.png" id="3_orm8i"]
 [ext_resource type="Script" path="res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd" id="4_xssex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysd0e"]
+size = Vector2(26, 52)
 
 [sub_resource type="Animation" id="Animation_ntk26"]
 length = 0.001
@@ -185,15 +189,31 @@ _data = {
 "movement_animation": SubResource("Animation_12oce")
 }
 
-[node name="RedFungusEnemy" type="CharacterBody2D" node_paths=PackedStringArray("player_detect_component", "self_animation_component")]
-script = ExtResource("1_572qg")
+[node name="RedFungusEnemy" type="CharacterBody2D" node_paths=PackedStringArray("player_detect_component", "self_animation_component", "area_battle_component") groups=["enemy_group"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_mmx50")
 player_detect_component = NodePath("PlayerDetectArea")
 self_animation_component = NodePath("SpriteEnemyComponent")
+area_battle_component = NodePath("start_battle_area_detect")
+enemy_name = "Red_Basic_Fungus"
 max_life = 100
-life_actual_amount = 100
+strength = 2
+focus = 1
+accuracy = 1
+enemy_range = "Fungus"
+static_enemy = true
+melee_attacks = true
 
 [node name="PlayerDetectArea" parent="." node_paths=PackedStringArray("base_enemy_component") instance=ExtResource("2_3n33y")]
 base_enemy_component = NodePath("..")
+
+[node name="start_battle_area_detect" parent="." node_paths=PackedStringArray("parent_base_enemy_component") instance=ExtResource("3_act61")]
+parent_base_enemy_component = NodePath("..")
+
+[node name="CollisionShape2D" parent="start_battle_area_detect" index="0"]
+position = Vector2(0, -26)
+shape = SubResource("RectangleShape2D_ysd0e")
+debug_color = Color(0.996078, 0, 0.203922, 0.419608)
 
 [node name="SpriteEnemyComponent" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -210,3 +230,9 @@ speed_scale = 0.7
 libraries = {
 "": SubResource("AnimationLibrary_60voa")
 }
+
+[node name="wait_time" type="Timer" parent="."]
+
+[connection signal="timeout" from="wait_time" to="." method="_on_wait_time_timeout"]
+
+[editable path="start_battle_area_detect"]

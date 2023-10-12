@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5jdvopi1o5rp"]
+[gd_scene load_steps=8 format=3 uid="uid://b5jdvopi1o5rp"]
 
 [ext_resource type="Script" path="res://Scenes/world_scenes/init_worldSCRIPT.gd" id="1_b207c"]
 [ext_resource type="PackedScene" uid="uid://cculrxymts3b5" path="res://Scenes/player_scene/mogitone.tscn" id="2_hc6ot"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://wfvl8k5r6fs0" path="res://Scenes/interactable_objects/show_text/show_text_objet.tscn" id="4_d7hfg"]
 [ext_resource type="PackedScene" uid="uid://cqaju6uf74bo4" path="res://Scenes/enemy_scenes/Brown_Fungus_Enemy/BrownFungusEnemy.tscn" id="4_o5hlo"]
 [ext_resource type="PackedScene" uid="uid://cwwbwos84vl2d" path="res://Scenes/enemy_scenes/Red_Fungus_Enemy/RedFungusEnemy.tscn" id="5_wru0s"]
+[ext_resource type="PackedScene" uid="uid://dprhj8fin0gn2" path="res://Componets/Battle_Mode_Component/battle_room_component/battle_room_component.tscn" id="7_yemaf"]
 
-[node name="init_world" type="Node2D"]
+[node name="init_world" type="Node2D" node_paths=PackedStringArray("battle_room_component")]
 script = ExtResource("1_b207c")
+battle_room_component = NodePath("battle_room_component")
 
 [node name="show_text_objet" parent="." instance=ExtResource("4_d7hfg")]
 position = Vector2(-547, 434)
@@ -16,22 +18,15 @@ position = Vector2(-547, 434)
 [node name="TestingRoom" parent="." instance=ExtResource("3_0dgws")]
 
 [node name="BrownFungusEnemy" parent="TestingRoom" instance=ExtResource("4_o5hlo")]
-position = Vector2(305.337, 94.0507)
+position = Vector2(171.916, 64.7419)
 scale = Vector2(0.437445, 0.437445)
 
 [node name="RedFungusEnemy" parent="TestingRoom" instance=ExtResource("5_wru0s")]
-position = Vector2(151.794, 51.1811)
-scale = Vector2(0.4, 0.4)
-
-[node name="wait_time" type="Timer" parent="TestingRoom/RedFungusEnemy"]
-wait_time = 0.6
-one_shot = true
+position = Vector2(434.821, 117.673)
+scale = Vector2(0.437445, 0.437445)
 
 [node name="mogitone" parent="." instance=ExtResource("2_hc6ot")]
 position = Vector2(593, 471)
 
-[connection signal="timeout" from="TestingRoom/RedFungusEnemy/wait_time" to="TestingRoom/RedFungusEnemy" method="_on_wait_time_timeout"]
-
-[editable path="TestingRoom/BrownFungusEnemy"]
-[editable path="TestingRoom/BrownFungusEnemy/PlayerDetectArea"]
-[editable path="TestingRoom/RedFungusEnemy"]
+[node name="battle_room_component" parent="." instance=ExtResource("7_yemaf")]
+position = Vector2(-2, 2522)

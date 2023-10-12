@@ -1,37 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqaju6uf74bo4"]
+[gd_scene load_steps=11 format=3 uid="uid://cqaju6uf74bo4"]
 
-[ext_resource type="Script" path="res://BaseEnemySCRIPT.gd" id="1_hox2x"]
+[ext_resource type="Script" path="res://Scenes/enemy_scenes/base_enemy/BaseEnemySCRIPT.gd" id="1_afem2"]
 [ext_resource type="PackedScene" uid="uid://duwbfpo42bo0i" path="res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn" id="2_ifq7s"]
 [ext_resource type="Texture2D" uid="uid://b450nfi5ocbh8" path="res://Assets/Enemy_Assets/mushrooms_pixel_asset.png" id="3_fpdc0"]
+[ext_resource type="PackedScene" uid="uid://csl8s55rmwhqx" path="res://Componets/areas_components/player_detect_component/start_battle_area_detect.tscn" id="3_y1soy"]
 [ext_resource type="Script" path="res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd" id="4_p0j4b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jan0h"]
+size = Vector2(32, 49)
 
 [sub_resource type="Animation" id="Animation_ps2x3"]
 resource_name = "alert_animation"
 length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(9, -6), Vector2(9, -8), Vector2(9, -9), Vector2(9, -10)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_5mvd5"]
 resource_name = "idle_animation"
@@ -96,18 +76,6 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.7]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Panel:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_12oce"]
 resource_name = "movement_animation"
@@ -149,18 +117,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0, 0.349066, 0.0, -0.349066]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Panel:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_60voa"]
 _data = {
@@ -169,22 +125,38 @@ _data = {
 "movement_animation": SubResource("Animation_12oce")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pmdf"]
-bg_color = Color(0.6, 0, 0.113725, 1)
-
-[node name="BrownFungusEnemy" type="CharacterBody2D" node_paths=PackedStringArray("player_detect_component", "self_animation_component")]
-script = ExtResource("1_hox2x")
+[node name="BrownFungusEnemy" type="CharacterBody2D" node_paths=PackedStringArray("player_detect_component", "self_animation_component", "area_battle_component") groups=["enemy_group"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_afem2")
 player_detect_component = NodePath("PlayerDetectArea")
 self_animation_component = NodePath("SpriteEnemyComponent")
-max_life = 100
-strength = 2
+area_battle_component = NodePath("start_battle_area_detect")
+enemy_name = "Brown_Basic_Fungus"
+max_life = 80
+max_Mana = 20
+strength = 1
+intelligence = 2
 focus = 1
-acuracy = 1
+accuracy = 1
 enemy_range = "Fungus"
 static_enemy = true
+resistance_to_debuffs = true
+melee_attacks = true
+magic_attacks = true
+magic_debuff = 2
+venom_debuff = 1
+test_flags = 7
 
 [node name="PlayerDetectArea" parent="." node_paths=PackedStringArray("base_enemy_component") instance=ExtResource("2_ifq7s")]
 base_enemy_component = NodePath("..")
+
+[node name="start_battle_area_detect" parent="." node_paths=PackedStringArray("parent_base_enemy_component") instance=ExtResource("3_y1soy")]
+parent_base_enemy_component = NodePath("..")
+
+[node name="CollisionShape2D" parent="start_battle_area_detect" index="0"]
+position = Vector2(3, -24.5)
+shape = SubResource("RectangleShape2D_jan0h")
+debug_color = Color(1, 0, 0.129412, 0.419608)
 
 [node name="SpriteEnemyComponent" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -202,14 +174,6 @@ libraries = {
 "": SubResource("AnimationLibrary_60voa")
 }
 
-[node name="Panel" type="Panel" parent="SpriteEnemyComponent"]
-visible = false
-offset_left = 9.0
-offset_top = -6.0
-offset_right = 10.0
-offset_bottom = 1.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_8pmdf")
-
 [node name="wait_time" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
@@ -217,3 +181,4 @@ one_shot = true
 [connection signal="timeout" from="wait_time" to="." method="_on_wait_time_timeout"]
 
 [editable path="PlayerDetectArea"]
+[editable path="start_battle_area_detect"]

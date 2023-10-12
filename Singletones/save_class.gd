@@ -7,12 +7,15 @@ const options_save_files_path = "user://save_config.save"
 var pj: CharacterBody2D
 
 # LOS DATOS QUE VOY A ESTAR MODIFICANDO Y CARGANDO
+var enemies_already_id: Array
+
 var options_data_array = {
 	"RESOLUTION_X" = 1280,
 	"RESOLUTION_Y" = 720,
 	"MUSIC_VOLUMEN" = 100, 
 	"FPS" = 60
 }
+
 
 
 var internal_data_save = {
@@ -60,5 +63,14 @@ func aplicate_options_saves():
 
 func internal_save(id: String,aux):
 	internal_data_save.id = aux
+
+
+func try_add_enemy_id(aux_enemy_unic_id):
+	if enemies_already_id.has(aux_enemy_unic_id):
+		return(false)
+	else:
+		enemies_already_id.append(aux_enemy_unic_id)
+		print(aux_enemy_unic_id)
+		return(true)
 
 

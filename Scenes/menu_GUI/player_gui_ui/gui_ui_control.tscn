@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cah64q314r7fm"]
+[gd_scene load_steps=12 format=3 uid="uid://cah64q314r7fm"]
 
 [ext_resource type="Script" path="res://Scenes/menu_GUI/player_gui_ui/gui_ui_controlSCRIPT.gd" id="1_cwdov"]
 
@@ -33,6 +33,9 @@ border_width_bottom = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qxs1"]
 bg_color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xji1"]
+bg_color = Color(0.2, 0.0705882, 0.0196078, 1)
 
 [node name="gui_ui_control" type="CanvasLayer" groups=["main_menu_group"]]
 process_mode = 3
@@ -265,6 +268,10 @@ visible = false
 offset_right = 1280.0
 offset_bottom = 520.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3qxs1")
+
+[node name="Battle_transition" type="Panel" parent="."]
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7xji1")
 
 [connection signal="pressed" from="exit_menu/continue_button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="exit_menu/exit_button" to="." method="_on_exit_button_pressed"]

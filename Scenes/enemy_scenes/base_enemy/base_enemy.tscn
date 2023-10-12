@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6cbglgvxh4pf"]
 
-[ext_resource type="Script" path="res://BaseEnemySCRIPT.gd" id="1_0sn6o"]
+[ext_resource type="Script" path="res://Scenes/enemy_scenes/base_enemy/BaseEnemySCRIPT.gd" id="1_u55cq"]
 [ext_resource type="PackedScene" uid="uid://duwbfpo42bo0i" path="res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn" id="2_xe4yi"]
 [ext_resource type="PackedScene" uid="uid://ds0hcjbdwpg7m" path="res://Componets/sprite_enemy_component/sprite_enemy_component.tscn" id="3_5jvmq"]
 
-[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("player_detect_component", "self_animation_component")]
-script = ExtResource("1_0sn6o")
+[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("player_detect_component", "self_animation_component") groups=["enemy_group"]]
+script = ExtResource("1_u55cq")
 player_detect_component = NodePath("PlayerDetectArea")
 self_animation_component = NodePath("SpriteEnemyComponent")
 enemy_range = "Fungus"

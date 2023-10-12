@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cculrxymts3b5"]
+[gd_scene load_steps=16 format=3 uid="uid://cculrxymts3b5"]
 
 [ext_resource type="Script" path="res://Scenes/player_scene/mogitoneSCRIPT.gd" id="1_t3clv"]
 [ext_resource type="PackedScene" uid="uid://cah64q314r7fm" path="res://Scenes/menu_GUI/player_gui_ui/gui_ui_control.tscn" id="2_62qi2"]
 [ext_resource type="Script" path="res://Scenes/player_scene/life_ComponentSCRIPT.gd" id="3_qhlua"]
 [ext_resource type="Script" path="res://Scenes/player_scene/HurtBoxSCRIPT.gd" id="4_ej0x4"]
+[ext_resource type="Script" path="res://Scenes/player_scene/StatManagerSCRIPT.gd" id="5_8hkpy"]
 [ext_resource type="PackedScene" uid="uid://beed74g0kjyk3" path="res://Componets/show_damage_component/show_damage_component.tscn" id="5_oqy3j"]
 [ext_resource type="Texture2D" uid="uid://bxojoxaw7l25i" path="res://Assets/Textures/light.png" id="6_0sjgg"]
 
@@ -118,8 +119,12 @@ position = Vector2(10, -34)
 
 [node name="another_Components_Managers" type="Node" parent="."]
 
-[node name="life_Component" type="Node2D" parent="another_Components_Managers" groups=["life_player_group"]]
+[node name="life_Component" type="Node2D" parent="another_Components_Managers" node_paths=PackedStringArray("stat_manager") groups=["life_player_group"]]
 script = ExtResource("3_qhlua")
+stat_manager = NodePath("../StatManager")
+
+[node name="StatManager" type="Node2D" parent="another_Components_Managers"]
+script = ExtResource("5_8hkpy")
 
 [node name="Areas" type="Node2D" parent="."]
 

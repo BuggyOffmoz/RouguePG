@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+# MANAGER EXPORTS
+
+
 
 # VARIABLES INTS----------------------------------------------------------------
 @export var speed: int = 200

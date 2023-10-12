@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bt0x23cn2gtwl"]
 
-[ext_resource type="Script" path="res://BaseEnemySCRIPT.gd" id="1_o0sn3"]
+[ext_resource type="Script" path="res://Scenes/enemy_scenes/base_enemy/BaseEnemySCRIPT.gd" id="1_o0sn3"]
 [ext_resource type="PackedScene" uid="uid://duwbfpo42bo0i" path="res://Componets/areas_components/player_detect_component/PlayerDetectArea.tscn" id="2_ximo5"]
 [ext_resource type="Texture2D" uid="uid://b450nfi5ocbh8" path="res://Assets/Enemy_Assets/mushrooms_pixel_asset.png" id="3_uu6fy"]
 [ext_resource type="Script" path="res://Componets/sprite_enemy_component/sprite_enemy_componentSCRIPT.gd" id="4_m8wxg"]

@@ -113,6 +113,16 @@ func update_max_life(amount: int):
 func update_life(amount: int):
 	$ProgressBar.set_value_no_signal(amount)
 
+
+func start_battle_transition():
+	var tween : Tween = get_tree().create_tween().set_trans(Tween.TRANS_CIRC)
+	tween.tween_property($Battle_transition, "size",Vector2(1280,720),1)
+
+
+func finalize_battle_transition():
+	var tween : Tween = get_tree().create_tween().set_trans(Tween.TRANS_CIRC)
+	tween.tween_property($Battle_transition, "size",Vector2(0,720),1)
+
 # SIGNALS-----------------------------------------------------------------------
 
 func _on_continue_button_pressed():
